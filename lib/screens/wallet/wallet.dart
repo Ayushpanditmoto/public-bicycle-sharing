@@ -15,11 +15,11 @@ class _WalletScreenState extends State<WalletScreen> {
   SharedPrefGetsNSets sprefs = SharedPrefGetsNSets();
   // shared pref //
 
-  late bool _paid;
-  late int _amount;
+  bool _paid = false;
+  int _amount = 0;
 
-  late double width;
-  late double height;
+  double? width;
+  double? height;
 
   TextEditingController amountController = TextEditingController();
   TextEditingController depositController = TextEditingController(text: '200');
@@ -76,11 +76,11 @@ class _WalletScreenState extends State<WalletScreen> {
             const SizedBox(height: 20),
             Center(
               child: Container(
-                width: width * 0.9,
-                height: height * 0.22,
+                width: width! * 0.9,
+                height: height! * 0.26,
                 padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.09,
-                  vertical: height * 0.05,
+                  horizontal: width! * 0.09,
+                  vertical: height! * 0.05,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.blueAccent,
@@ -208,8 +208,8 @@ class _WalletScreenState extends State<WalletScreen> {
                   vertical: 15,
                 ),
                 child: SizedBox(
-                  height: height * 0.06,
-                  width: width * 0.45,
+                  height: height! * 0.06,
+                  width: width! * 0.45,
                   child: ElevatedButton(
                     onPressed: _paid
                         ? () async {

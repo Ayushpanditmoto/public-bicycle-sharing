@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:public_bicycle_sharing/screens/home/default_home.dart';
-import 'package:public_bicycle_sharing/screens/home/qr_scan.dart';
 import 'package:public_bicycle_sharing/screens/loading/splash.dart';
 import 'package:public_bicycle_sharing/screens/settings/config.dart';
 import 'package:public_bicycle_sharing/services/shared_prefs.dart';
@@ -17,9 +15,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   SharedPrefGetsNSets sprefs = SharedPrefGetsNSets();
 
-  late String _themeColor;
-  late bool _isDark;
-
   Map<String, Color> stringToColor = {
     'blue': Colors.blue,
     'purple': Colors.purple,
@@ -30,25 +25,19 @@ class _MyAppState extends State<MyApp> {
 
   // shared pref //
   Future<void> getThemeColor() async {
-    String? themeColor = await sprefs.getThemeColor();
-    setState(() {
-      _themeColor = themeColor!;
-    });
+    setState(() {});
   }
 
   // shared pref //
   Future<void> getDarkThemeStatus() async {
-    bool? isDark = await sprefs.getDarkThemeStatus();
-    setState(() {
-      _isDark = isDark!;
-    });
+    setState(() {});
   }
 
   final ThemeData _lightTheme = ThemeData(
     useMaterial3: true,
     scaffoldBackgroundColor: Colors.white,
     brightness: Brightness.light,
-    primaryColor: Colors.blue,  // #2196F3
+    primaryColor: Colors.blue, // #2196F3
     // floatingActionButtonTheme:
     //     const FloatingActionButtonThemeData(backgroundColor: Colors.blue),
   );

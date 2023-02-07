@@ -11,7 +11,6 @@ class AfterRideScreen extends StatefulWidget {
 
 class _AfterRideScreenState extends State<AfterRideScreen> {
   String _selectedOption = '';
-  String _feedback = '';
   double _emojiRating = 0;
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,8 @@ class _AfterRideScreenState extends State<AfterRideScreen> {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text('Ride Time: '),
-                    Text('28 min', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('28 min',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 Row(
@@ -72,8 +72,9 @@ class _AfterRideScreenState extends State<AfterRideScreen> {
                       case 1:
                         return Icon(
                           Icons.sentiment_dissatisfied,
-                          color:
-                              _emojiRating == 2 ? Colors.redAccent : Colors.grey,
+                          color: _emojiRating == 2
+                              ? Colors.redAccent
+                              : Colors.grey,
                         );
                       case 2:
                         return Icon(
@@ -83,8 +84,9 @@ class _AfterRideScreenState extends State<AfterRideScreen> {
                       case 3:
                         return Icon(
                           Icons.sentiment_satisfied,
-                          color:
-                              _emojiRating == 4 ? Colors.lightGreen : Colors.grey,
+                          color: _emojiRating == 4
+                              ? Colors.lightGreen
+                              : Colors.grey,
                         );
                       case 4:
                         return Icon(
@@ -94,7 +96,6 @@ class _AfterRideScreenState extends State<AfterRideScreen> {
                       default:
                         return Container();
                     }
-                    ;
                   },
                   onRatingUpdate: (rating) {
                     setState(() {
@@ -159,9 +160,7 @@ class _AfterRideScreenState extends State<AfterRideScreen> {
           ),
         ),
         onChanged: (value) {
-          setState(() {
-            _feedback = value;
-          });
+          setState(() {});
         },
       ),
     );
